@@ -1,3 +1,7 @@
+
+local map = vim.keymap.set
+local defaults = { noremap = true, silent = true }
+
 -- Custom key bindings
 vim.api.nvim_exec([[
 inoremap jk <Esc>
@@ -10,6 +14,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-]], false)
 
+nnoremap <leader>w :WhichKey<CR>
+]], false)
 

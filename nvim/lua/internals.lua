@@ -1,41 +1,33 @@
-vim.api.nvim_exec([[
-filetype plugin on
 
-set encoding=utf-8
+local set = vim.opt
 
-set nobackup
-set nowritebackup
+set.encoding = 'utf-8'
 
-set updatetime=300
+set.backup = false
+set.writebackup = false
 
-set signcolumn=yes
+set.updatetime = 300
 
-set number " Line number
+set.signcolumn = 'yes'
 
-set history=1000 " Undo depth
+set.number = true -- Line number
 
-set shortmess+=A " Turn off annoying swapfile errors on file load
+set.history = 1000 -- Undo depth
 
-" Indentation
-set autoindent 
-" set smartindent
-" set cindent
+set.shortmess = 'AIT' -- Turn off annoying swapfile errors on file load
 
-set tabstop=4
-set shiftwidth=4
-set expandtab
+-- Indentation
+set.autoindent = true
+-- set smartindent
+-- set cindent
 
-" Highlighting
-set hlsearch 
-set showmatch
-set ignorecase 
-set incsearch
+set.tabstop = 4
+set.shiftwidth = 4
+set.expandtab = true
 
-colorscheme gruvbox
-
-if has("syntax")
-  syntax on 
-endif
-]], false)
-
+-- Highlighting
+set.hlsearch = true
+set.showmatch = true
+set.ignorecase = true
+set.incsearch = true
 

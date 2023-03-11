@@ -14,9 +14,3 @@ git clone https://github.com/null-lambda/configs.git
 :Pluginstall
 :source %
 ```
-
-## Dependencies
-- git  
-This is only required for file download during the early bootstrapping stage.
-- (optional) [Nerd fonts](https://www.nerdfonts.com/)  
-These fonts are required for file icons and the fancy status line. My preference is DroidSansMono NFM Bold. 
