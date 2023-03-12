@@ -43,32 +43,43 @@ return {
      },
   },
 
-  -- External tooling manager
-  { 'williamboman/mason.nvim',
-    config = function() 
-      require('mason').setup()
+  -- Fuzzy search
+  { 'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
+    dependencies = { 
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-fzf-native.nvim',
+    },
+    keys = {
+      { '<leader>t', '<cmd>Telescope builtin<cr>', desc = 'Telescope'  },
+      { '<leader>p', '<cmd>Telescope commands<cr>', desc = 'Commands'  },
+      { '<leader>o', '<cmd>Telescope find_files<cr>', desc = 'Find Files' },
+      { '<leader>r', '<cmd>Telescope oldfiles<cr>', desc = 'Recent Files' },
+      { '<leader>k', '<cmd>Telescope keys<cr>', desc = 'Keymaps' },
+    },
+    config = function()
+      local map = vim.keymap.set
+      require 'telescope'.setup {
+        pickers = {
+          find_files = {
+            -- theme = "dropdown",
+          }
+        },
+      }
     end
   },
-
-  -- Browser supports (requires browser specific extensions) 
-  { 'glacambre/firenvim',
-     -- Lazy load firenvim
-     -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
-     cond = not not vim.g.started_by_firenvim,
-     build = function()
-         require("lazy").load({ plugins = "firenvim", wait = true })
-         vim.fn["firenvim#install"](0)
+  { 'nvim-telescope/telescope-fzf-native.nvim',
+     build = "make",
+     config = function()
+       require 'telescope'.load_extension 'fzf'
      end
   },
 
-  -- Below here goes language specific ones
-  -- 
-  -- Tex
-  { 'lervag/vimtex',
-    lazy = false,
-    config = function() 
-      vim.g.vimtex_view_method = 'zathura'
-      vim.g.maplocalleader = ','
-    end 
-  }
+  ----
+  --{ 'nvim-treesitter/nvim-treesitter', 
+  --  build = function() 
+  --    vim.cmd(':TSUpdate')
+  --  end 
+  --}
+  --
 }
