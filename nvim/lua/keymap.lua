@@ -1,20 +1,22 @@
-
 local map = vim.keymap.set
-local defaults = { noremap = true, silent = true }
 
 -- Custom key bindings
-vim.api.nvim_exec([[
-inoremap jk <Esc>
-inoremap kj <Esc>
 
-let mapleader = ","
+map('i', 'jk', '<Esc>')
+map('i', 'kj', '<Esc>')
 
-" Movement between split windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+vim.g.mapleader = ','
 
-nnoremap <leader>w :WhichKey<CR>
-]], false)
+map('n', '<C-h>', '<C-w>h', { desc = 'Move to window - Left' })
+map('n', '<C-j>', '<C-w>j', { desc = 'Move to window - Down' })
+map('n', '<C-k>', '<C-w>k', { desc = 'Move to window - Up' })
+map('n', '<C-l>', '<C-w>l', { desc = 'Move to window - Right' })
+
+map('n', '<C-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Window width--' })
+map('n', '<C-Down>', '<cmd>resize -1<cr>', { desc = 'Window height--' })
+map('n', '<C-Up>', '<cmd>resize +1<cr>', { desc = 'window height++' })
+map('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'window width++' })
+
+map('n', '?', '<cmd>WhichKey<cr>')
+
 
