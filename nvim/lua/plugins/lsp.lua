@@ -20,6 +20,9 @@ return {
       -- })
     end
   },
+  {
+    'github/copilot.vim'
+  }
   -- { "hrsh7th/nvim-cmp",
   --   config = function() 
   --     -- Setup cmp
