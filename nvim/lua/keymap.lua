@@ -19,4 +19,4 @@ map('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'window width++' }
 
 map('n', '?', '<cmd>WhichKey<cr>')
 
-
+map('n', '<C-/>', '<cmd>nohl<cr>', { desc = 'nohlsearch' })
