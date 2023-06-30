@@ -10,6 +10,9 @@ set.shortmess = 'AIT' -- Turn off annoying swapfile errors on file load
 set.autowrite = true -- Auto save file
 set.autoread = true 
 
+-- Per project config (NeoVim >= 0.9.0)
+set.exrc = true  
+
 -- set.clipboard:append { 'unnamed', 'unnamedplus' } -- just y, p to use clipboard 
 
 set.updatetime = 300

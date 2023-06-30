@@ -3,14 +3,13 @@ return {
   { 'lervag/vimtex',
     lazy = false,
     config = function() 
-
       if vim.fn.executable('SumatraPDF') == 0 then
         vim.g.vimtex_view_method = 'zathura'
       end
 
       -- vim.g.vimtex_indent_enabled   = 0 -- turn off VimTeX indentation
-      -- vim.g.vimtex_imaps_enabled    = 0 -- disable insert mode mappings (e.g. if you use UltiSnips)
-      -- vim.g.vimtex_complete_enabled = 0 -- turn off completion
+      vim.g.vimtex_imaps_enabled    = 0 -- disable insert mode mappings (e.g. if you use UltiSnips)
+      vim.g.vimtex_complete_enabled = 0 -- turn off completion
       -- vim.g.vimtex_syntax_enabled   = 0 -- disable syntax conceal
       
       vim.g.vimtex_compiler_latexmk = { 
