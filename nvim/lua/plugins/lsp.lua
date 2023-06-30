@@ -1,9 +1,9 @@
 -- Auto-completion
 return {
-  { 'williamboman/mason.nvim',
+  { 
+    'williamboman/mason.nvim',
     ops = {
       ensure_installed = {
-        
       }
     },
     dependencies = {
@@ -15,14 +15,34 @@ return {
       --   ensure_installed = {
       --     -- Replace these with whatever servers you want to install
       --     'rust_analyzer',
-
       --   }
       -- })
     end
   },
-  {
-    'github/copilot.vim'
-  }
+  { 'github/copilot.vim' },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({
+  --       panel = {
+  --       },
+  --       suggestion = {
+  --         auto_trigger = true,  
+  --         debounce = 50,
+  --         keymap = {
+  --           accept = "<TAB>",
+  --           -- accept_word = true,
+  --           -- accept_line = true,
+  --           next = "<A-]>",
+  --           prev = "<A-[>",
+  --           dismiss = "<Esc>",
+  --         }
+  --       }
+  --     })
+  --   end,
+  -- },
   -- { "hrsh7th/nvim-cmp",
   --   config = function() 
   --     -- Setup cmp

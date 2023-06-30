@@ -8,7 +8,7 @@ return {
     lazy = false,
     config = function()
       vim.o.timeout = true
-      vim.o.timeoutlen = 300
+      vim.o.timeoutlen = 500
       require("which-key").setup()
     end
   },
@@ -82,4 +82,25 @@ return {
   --  end 
   --}
   --
+
+  -- Snippets
+  { "L3MON4D3/LuaSnip",
+    version = "1.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    build = "make install_jsregexp",
+    config = function() 
+      -- vim.cmd[[
+      -- " Use Tab to expand and jump through snippets
+      -- imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+      -- smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+
+      -- " Use Shift-Tab to jump backwards through snippets
+      -- imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+      -- smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+      -- ]]
+
+      -- require("luasnip/loaders/from_snipmate").lazy_load({ paths = { "./snippets" }})
+    end,
+    enable_autosnippets = true, 
+    store_selection_keys = "<Tab>", -- Trigger visual selection
+  },
 }

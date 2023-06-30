@@ -14,10 +14,10 @@ return {
         -- remove mouse trigger, forcing to set up custom keybind in browser settings.
          takeover = 'never', 
        }
-       vim.api.nvim_create_autocmd({'BufEnter'}, {
-         pattern = "overleaf.com/project/*",
-         command = "set filetype=tex",
-       })
+       -- vim.api.nvim_create_autocmd({'BufEnter'}, {
+       --   pattern = "overleaf.com/project/*",
+       --   command = "set filetype=tex",
+       -- })
      end
   },
 }
