@@ -31,23 +31,26 @@ return {
     \\end{$1}
     ]]),
 
-    sm("tt", "\\text{$1} $0"),
-
     s({ trig = "mm", snippetType = "autosnippet" },
     m("$$1$ $0")),
 
+    x({ trig = "tt", snippetType = "autosnippet" },
+    m("\\text{$1} $0"),
+    { condition = in_mathzone }),
+
     -- Math commands 
-    sm("ff", "\\frac{$1}{$2} $0",
+    s({ trig = "ff", snippetType = "autosnippet" }, 
+    m("\\frac{$1}{$2} $0"),
     { condition = in_mathzone }),
 
     -- subscripts
-    s({ trig = '(%a)(%d)', regTrig = true, snippetType = "autosnippet", wordTrig = false },
+    s({ trig = '(%a)(%d)', regTrig = true, snippetType = "autosnippet" },
     fmta("<>_<>",
     { f(function(_, snip) return snip.captures[1] end),
     f(function(_, snip) return snip.captures[2] end) }),
     { condition = in_mathzone }),
 
-    s({ trig='_([^%s]+)', regTrig = true, wordTrig = false },
+    s({ trig='_([^%s][^%s]+)', regTrig = true, wordTrig = false },
     fmta("_{<>}",
     { f(function(_, snip) return snip.captures[1] end)}),
     { condition = in_mathzone }),
