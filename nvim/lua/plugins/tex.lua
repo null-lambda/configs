@@ -13,7 +13,7 @@ return {
       -- vim.g.vimtex_syntax_enabled   = 0 -- disable syntax conceal
 
       vim.g.vimtex_compiler_latexmk = { 
-       build_dir = 'build',
+       out_dir = 'build',
        continuous = 1,
        callback = 1 
       }
