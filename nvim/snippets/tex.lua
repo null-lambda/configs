@@ -34,7 +34,7 @@ return {
     s({ trig = "mm", snippetType = "autosnippet" },
     m("$$1$ $0")),
 
-    x({ trig = "tt", snippetType = "autosnippet" },
+    s({ trig = "tt", snippetType = "autosnippet" },
     m("\\text{$1} $0"),
     { condition = in_mathzone }),
 
