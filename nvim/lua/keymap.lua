@@ -17,6 +17,6 @@ map('n', '<C-Down>', '<cmd>resize -1<cr>', { desc = 'Window height--' })
 map('n', '<C-Up>', '<cmd>resize +1<cr>', { desc = 'window height++' })
 map('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'window width++' })
 
-map('n', '?', '<cmd>WhichKey<cr>')
+map('n', ',?', '<cmd>WhichKey<cr>')
 
-map('n', '<C-/>', '<cmd>nohl<cr>', { desc = 'nohlsearch' })
+map('n', '?', '<cmd>nohl<cr>', { desc = 'nohlsearch' })
