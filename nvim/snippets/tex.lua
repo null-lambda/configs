@@ -5,6 +5,7 @@ local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
 local d = ls.dynamic_node
+local c =  ls.choice_node
 local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
@@ -32,25 +33,25 @@ return {
     ]]),
 
     s({ trig = "mm", snippetType = "autosnippet" },
-    m("$$1$ $0")),
+    m("$$1$$0")),
 
     s({ trig = "tt", snippetType = "autosnippet" },
-    m("\\text{$1} $0"),
+    m("\\text{$1}$0"),
     { condition = in_mathzone }),
 
     -- Math commands 
     s({ trig = "ff", snippetType = "autosnippet" }, 
-    m("\\frac{$1}{$2} $0"),
+    m("\\frac{$1}{$2}$0"),
     { condition = in_mathzone }),
 
     -- subscripts
-    s({ trig = '(%a)(%d)', regTrig = true, snippetType = "autosnippet" },
+    s({ trig = '(%a)(%d)', regTrig = true},
     fmta("<>_<>",
     { f(function(_, snip) return snip.captures[1] end),
     f(function(_, snip) return snip.captures[2] end) }),
     { condition = in_mathzone }),
 
-    s({ trig='_([^%s][^%s]+)', regTrig = true, wordTrig = false },
+    s({ trig='_([^%s][^%s][^%s]?)', regTrig = true, wordTrig = false },
     fmta("_{<>}",
     { f(function(_, snip) return snip.captures[1] end)}),
     { condition = in_mathzone }),
@@ -105,4 +106,14 @@ return {
     math_symbol(";C", "\\Chi"),
     math_symbol(";Y", "\\Psi"),
     math_symbol(";W", "\\Omega"),
+
+    math_symbol(";.", "\\cdot"),
+
+    s({ trig = ",..", snippetType = "autosnippet", wordTrig = false },
+    t(",\\dots"),
+    { condition = in_mathzone }),
+
+    s({ trig = "...", snippetType = "autosnippet", wordTrig = false },
+    t("\\cdots"),
+    { condition = in_mathzone }),
 }
