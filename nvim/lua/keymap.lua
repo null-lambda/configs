@@ -2,10 +2,11 @@ local map = vim.keymap.set
 
 -- Custom key bindings
 
+vim.g.mapleader = ','
+vim.g.maplocalleader = ';'
+
 map('i', 'jk', '<Esc>')
 map('i', 'kj', '<Esc>')
-
-vim.g.mapleader = ','
 
 map('n', '<C-h>', '<C-w>h', { desc = 'Move to window - Left' })
 map('n', '<C-j>', '<C-w>j', { desc = 'Move to window - Down' })
