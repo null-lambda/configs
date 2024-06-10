@@ -5,7 +5,6 @@ vim.g.loaded_netrwPlugin = 1
 return {
   -- Display possible keys
   { "folke/which-key.nvim",
-    lazy = false,
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 500
@@ -66,13 +65,12 @@ return {
           }
         },
       }
+      require 'telescope'.load_extension 'fzf'
     end
   },
   { 'nvim-telescope/telescope-fzf-native.nvim',
      build = "make",
-     config = function()
-       require 'telescope'.load_extension 'fzf'
-     end
+     lazy = true
   },
 
   ----
