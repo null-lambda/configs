@@ -3,7 +3,8 @@ local map = vim.keymap.set
 -- Custom key bindings
 
 vim.g.mapleader = ','
-vim.g.maplocalleader = ';'
+vim.g.maplocalleader = ','
+-- vim.g.maplocalleader = ';'
 
 map('i', 'jk', '<Esc>')
 map('i', 'kj', '<Esc>')
