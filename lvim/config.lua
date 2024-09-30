@@ -23,3 +23,6 @@ lvim.format_on_save_pattern = {
 
 -- Disable automatic root detection
 lvim.builtin.project.manual_mode = true
+
+-- Tab to auto-complete
+lvim.builtin.cmp.preselect = true
