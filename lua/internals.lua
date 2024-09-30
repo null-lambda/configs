@@ -1,4 +1,3 @@
-
 local set = vim.opt
 
 set.encoding = 'utf-8'
@@ -7,14 +6,13 @@ set.backup = false
 set.writebackup = false
 set.shortmess = 'AIT' -- Turn off annoying swapfile errors on file load
 
-set.autowrite = true -- Auto save file
-set.autoread = true 
+set.autowrite = true  -- Auto save file
+set.autoread = true
 
 -- Per project config (NeoVim >= 0.9.0)
-set.exrc = true  
+set.exrc = true
 
--- set.clipboard:append { 'unnamed', 'unnamedplus' } -- just y, p to use clipboard 
-
+set.clipboard:append { 'unnamed', 'unnamedplus' } -- just y, p to use clipboard
 set.updatetime = 300
 
 -- Layout
@@ -25,11 +23,11 @@ set.laststatus = 0
 set.showmode = false -- Turn off mode display on statusline
 
 
-set.history = 1000 -- Command history
+set.history = 1000  -- Command history
 set.undofile = true -- Undo even after restarting the nvim
-set.undolevels = 1000 
+set.undolevels = 1000
 
-set.mouse = '' -- Disable mouse
+-- set.mouse = '' -- Disable mouse
 -- set.mousescroll = 'ver:0,hor:0' -- Disable mouse scrolling
 
 -- Indentation
@@ -48,4 +46,3 @@ set.hlsearch = true
 set.showmatch = true
 set.ignorecase = true
 set.incsearch = true
-
