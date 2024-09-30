@@ -1,7 +1,11 @@
 # configs
-Configuration files for my personal use.
+Personal configurations & dotfiles.
 
-Since I've fully transitioned from Vim to Neovim, the .vim folder and .vimrc files are no longer maintained, These files are only intended for use on legacy systems and not meant for anyone else.
+* nvim : 
+(Neovim)[https://github.com/neovim/neovim/blob/master/INSTALL.md]
+* lvim :
+(LunarVim)[https://www.lunarvim.org/docs/installation]
+
 
 ## Todos 
 - [ ] Setup LSP + Autocompletion 
@@ -9,12 +13,22 @@ Since I've fully transitioned from Vim to Neovim, the .vim folder and .vimrc fil
 
 ## Download
 To obtain the entire repository, enter the following command in your terminal.
-```
+```shell
 git clone https://github.com/null-lambda/configs.git
 ```
 
-(only for vim) run the following command to install plugins.
+
+## Generating Symbolic links
+* Linux
+```shell
+for FN in nvim lvim; do ln -s ~/configs/$FN ~/.config; done
 ```
-:Pluginstall
-:source %
+* Windows (Powershell)
+```powershell
+$DEST = "$env:USERPROFILE\AppData\Local"
+$SRC = "$env:USERPROFILE\configs"
+$FN = "nvim", "lvim"
+foreach ($fn in $configs) {
+    New-Item -ItemType SymbolicLink -Path "$DEST\$FN" -Value "$SRC\$FN"
+}
 ```
