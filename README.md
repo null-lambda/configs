@@ -8,7 +8,6 @@ Personal configurations & dotfiles.
 
 
 ## Todos 
-- [ ] Setup LSP + Autocompletion 
 - [ ] Setup snippets 
 
 ## Download
