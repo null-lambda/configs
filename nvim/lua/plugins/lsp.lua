@@ -19,7 +19,7 @@ return {
       -- })
     end
   },
-  { 'github/copilot.vim' },
+  -- { 'github/copilot.vim' },
   -- {
   --   "zbirenbaum/copilot.lua",
   --   cmd = "Copilot",
